@@ -33,24 +33,77 @@ $$
 \lambda = \frac{c}{f_c}
 $$
 
-Where $c$ is the speed of light.
+Where:
 
-Wavelength influences how radio waves reflect off objects.
+- $\lambda$ = Wavelength (meters)
+- $c$ = Speed of light ($3 \times 10^8$ m/s)
+- $f_c$ = Center frequency (Hz)
+
+Wavelength influences how radio waves reflect and scatter off objects.
 
 Bandwidth determines how precisely we can distinguish signals based on their arrival times. We compare the direct signal with the signal reflected from an object.
 
-The monostatic-equivalent range resolution is:
+The **monostatic-equivalent range resolution** is:
 
 $$
 \Delta R = \frac{c}{2B}
 $$
 
+Where:
+
+- $\Delta R$ = Range resolution (meters)
+- $c$ = Speed of light (m/s)
+- $B$ = Effective signal bandwidth (Hz)
+
+For passive bistatic radar, the excess-path-length resolution is approximately:
+
+$$
+\Delta L = \frac{c}{B}
+$$
+
+Where:
+
+- $\Delta L$ = Excess-path-length resolution (meters)
+- $B$ = Effective signal bandwidth (Hz)
+
+The actual spatial resolution depends on the transmitter-target-receiver geometry.
+
+**Key takeaway:** Higher bandwidth provides better range resolution, allowing us to distinguish objects that are closer together in delay/range.
+
 ### What About Micro-Doppler?
 
-The Doppler frequency resolution is:
+Micro-Doppler describes frequency modulations caused by smaller movements within a target, such as rotating drone propellers or flapping bird wings.
+
+The Doppler frequency shift for a monostatic radar is:
+
+$$
+f_D = \frac{2v_r f_c}{c}
+$$
+
+Where:
+
+- $f_D$ = Doppler frequency shift (Hz)
+- $v_r$ = Radial velocity of the target (m/s)
+- $f_c$ = Center frequency (Hz)
+- $c$ = Speed of light (m/s)
+
+In passive bistatic radar, the Doppler shift also depends on the transmitter-target-receiver geometry.
+
+**Key takeaway:** Higher center frequencies produce larger Doppler shifts for the same target velocity and geometry.
+
+The **Doppler frequency resolution** is approximately:
 
 $$
 \Delta f_D \approx \frac{1}{T_{\text{CPI}}}
 $$
 
-Where $T_{\text{CPI}}$ is the coherent processing interval (CPI), which determines how finely we can distinguish Doppler frequencies.
+Where:
+
+- $\Delta f_D$ = Doppler frequency resolution (Hz)
+- $T_{\text{CPI}}$ = Coherent processing interval (seconds)
+
+The coherent processing interval (CPI) is the duration over which we coherently process the received signal to distinguish Doppler frequencies.
+
+A longer CPI provides finer Doppler frequency resolution, assuming the signal remains coherent.
+
+**Key takeaway:** Center frequency affects the magnitude of Doppler shifts, while CPI determines how finely we can distinguish those shifts.
